@@ -23,4 +23,13 @@ class Home extends AbstractController
 
         return $this->render("home/index", ["pageTitle" => "Home page"]);
     }
+
+    /**
+     * @return mixed
+     * on retourne du json pour l'exploiter en API
+     */
+    public function indexApi()
+    {
+        return $this->json($this->defaultModel->findAll());
+    }
 }
