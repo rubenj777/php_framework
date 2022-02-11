@@ -34,22 +34,22 @@ class File
     }
 
     /**
-     * upload l'image dans le fichier images grace à la methode move_uploaded_file
-     * FROM $this->tempFile TO $this->target
-     */
-    public function upload()
-    {
-
-        move_uploaded_file($this->tempFile, $this->target);
-    }
-
-    /**
      * @return string
      */
     public function getName()
     {
         return $this->name;
     }
+
+    /**
+     * upload l'image dans le fichier images grace à la methode move_uploaded_file
+     * FROM $this->tempFile TO $this->target
+     */
+    public function upload()
+    {
+        move_uploaded_file($this->tempFile, $this->target);
+    }
+
 
     /**
      * vérifie si le fichier sélectionné par l'utilisateur est une image en le comparant
